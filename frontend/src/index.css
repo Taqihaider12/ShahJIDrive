@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #06B6D4;
+  --color-primary-foreground: #ffffff;
+  
+  --color-secondary: #6366F1;
+  --color-secondary-foreground: #ffffff;
+  
+  --color-background: #020617;
+  --color-card: #0b0f19;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
+  
+  --color-border: #1e293b;
+  
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth fade-in animation utility */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out both;
+}
+
+/* Prevent accidental page scroll while dragging slider on mobile */
+.speed-slider {
+  touch-action: none;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom premium visual accents with 2-color indigo-to-cyan gradient */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #6366F1 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Backwards compatibility helper to keep original classes working without breaking anything */
+.text-gradient-gold, .text-gradient-purple {
+  background: linear-gradient(135deg, #6366F1 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-gold, .glow-purple {
+  box-shadow: 0 0 35px rgba(6, 182, 212, 0.08);
+}
+
+/* Base custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Speed slider custom styling — Issue #4: prominent handle for affordance */
+.speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #06B6D4;
+  border: 3px solid #0e1525;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.speed-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.6);
+  transform: scale(1.1);
+}
+.speed-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #06B6D4;
+  border: 3px solid #0e1525;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+  cursor: pointer;
+}
+.speed-slider::-moz-range-track {
+  height: 16px;
+  border-radius: 9999px;
+  background: #1e293b;
+}
